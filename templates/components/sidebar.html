@@ -1,0 +1,61 @@
+<section class="bg-gray-800 w-64 max-h-screen m-3 rounded-xl p-2">
+    <div class="mt-6">
+        <ul class="flex flex-col space-y-2">
+            <li>
+                <a href="{% url 'blogs:blog-create' %}" class="text-gray-300 hover:text-white">Create a Blog</a>
+            </li>
+            <li>
+                <a href="{% url 'users:my-blogs' %}" class="text-gray-300 hover:text-white">My Blogs</a>
+            </li>
+            <li>
+                <a href="{% url 'users:profile' %}" class="text-gray-300 hover:text-white">My Profile</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="p-6">
+        <h2 class="text-white text-xl font-semibold mb-4">Tags</h2>
+        <ul class="space-y-2">
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Travel' %}"
+                    class="text-gray-300 hover:text-white">Travel</a>
+            </li>
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Fashion' %}"
+                    class="text-gray-300 hover:text-white">Fashion</a>
+            </li>
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Lifestyle' %}"
+                    class="text-gray-300 hover:text-white">Lifestyle</a>
+            </li>
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Educational' %}"
+                    class="text-gray-300 hover:text-white">Educational</a>
+            </li>
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Relationships' %}"
+                    class="text-gray-300 hover:text-white">Relationships</a>
+            </li>
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Entertainment' %}"
+                    class="text-gray-300 hover:text-white">Entertainment</a>
+            </li>
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Other' %}"
+                    class="text-gray-300 hover:text-white">Other</a>
+            </li>
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Finance' %}"
+                    class="text-gray-300 hover:text-white">Finance</a>
+            </li>
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Health' %}"
+                    class="text-gray-300 hover:text-white">Health</a>
+            </li>
+            <li>
+                <a href="{% url 'blogs:filtered-blogs-by-tag' 'Technology' %}"
+                    class="text-gray-300 hover:text-white">Technology</a>
+            </li>
+        </ul>
+    </div>
+</section>

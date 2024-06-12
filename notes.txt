@@ -1,0 +1,41 @@
+Here are the functional requirements of a basic blog website:
+
+**Content Management System (CMS):**
+
+* Users should be able to create, edit, and publish blog posts. This includes formatting the text, adding images and other media, and choosing a title and excerpt.
+* Users should be able to manage categories and tags for posts. This allows for better organization of content and easier browsing for readers.
+
+**User Management:**
+
+* The website should allow user registration and login. This creates a system where only authorized users can publish content.
+* Users should have different permission levels (e.g., author, editor, admin). This allows for control over who can create, edit, and publish posts. For instance, an editor can review and approve posts written by authors.
+
+**Post Functionality:**
+
+* Each post should have a title, content, and excerpt. The title is the main headline, the content is the body of the article, and the excerpt is a short summary that users see before clicking on the full post.
+* Posts should be displayed in a chronological order by default. This means the newest posts appear first.
+* Users should be able to search for posts by title, category, or tag. This helps readers find content relevant to their interests.
+
+**Additional Considerations (Optional):**
+
+* Comments System: Users can leave comments on posts and interact with the blogger and other readers. This can be a great way to build a community around the blog. However, it's important to also consider implementing comment moderation to avoid spam or inappropriate content.
+* Static Pages: The website can allow creation and management of static pages (e.g., About Us, Contact). These pages provide important information about the blog and the blogger.
+
+These are just the basic requirements, and you can add more features depending on your specific needs. For instance, you might want to include social media sharing buttons, a newsletter signup form, or analytics tracking.
+
+
+
+
+# authentication
+# blogs
+# list blogs
+# crud on blogs
+# blog detail
+# styling
+# add tag field to blog
+
+
+# title section
+# side bar
+landing page
+# profile page content

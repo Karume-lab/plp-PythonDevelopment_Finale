@@ -1,0 +1,32 @@
+{% load compress %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOGIFY</title>
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    {% endcompress %}
+</head>
+
+<body>
+    <div class="min-h-screen flex items-center justify-center bg-gray-100">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-8">Welcome to Blogify</h1>
+            <p class="text-lg text-gray-600 mb-8">Discover fascinating stories, insightful articles, and helpful guides.
+            </p>
+            <div class="flex justify-center">
+                <a href="{% url 'users:signup' %}"
+                    class="mr-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded">Sign Up</a>
+                <a href="{% url 'users:login' %}"
+                    class="bg-gray-800 hover:bg-gray-900 text-white font-semibold px-6 py-3 rounded">Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

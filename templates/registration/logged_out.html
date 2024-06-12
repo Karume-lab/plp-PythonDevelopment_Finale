@@ -1,0 +1,12 @@
+{% extends './reg_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="flex items-center justify-center h-screen">
+  <img src="{% static 'img/miss.jpg' %}" alt="" srcset="" class="rounded-xl mr-4">
+  <div>
+    <p class="text-4xl font-bold mb-4">Successfully logged out!</p>
+    <a href="{% url 'users:login' %}" class="text-blue-500 hover:underline">Click here to login again</a>
+  </div>
+</div>
+{% endblock content %}

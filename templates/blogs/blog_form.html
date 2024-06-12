@@ -1,0 +1,48 @@
+{% extends './../base.html' %}
+
+{% block title %}
+New
+{% endblock title %}
+
+{% block content %}
+<div class="min-h-screen mb-4 flex items-center justify-center bg-gray-100">
+    <form action="" method="post" enctype="multipart/form-data" class="w-full p-8 bg-white rounded shadow-md">
+        {% csrf_token %}
+        {{ form.media }}
+        <h1 class="text-3xl font-bold mb-8 text-center">Create/Update Blog</h1>
+        <div class="mb-4">
+            <div class="flex">
+                {{ form.title.label_tag }}
+                <div class="border-2 w-fit ml-2">
+                    {{ form.title }}
+                </div>
+            </div>
+            {% if form.title.errors %}
+            <p class="text-red-500">{{ form.title.errors }}</p>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            {{ form.content.label_tag }}
+            {{ form.content }}
+            {% if form.content.errors %}
+            <p class="text-red-500">{{ form.content.errors }}</p>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            {{ form.image.label_tag }}
+            {{ form.image }}
+            {% if form.image.errors %}
+            <p class="text-red-500">{{ form.image.errors }}</p>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            {{ form.tags.label_tag }}
+            {{ form.tags }}
+            {% if form.tags.errors %}
+            <p class="text-red-500">{{ form.tags.errors }}</p>
+            {% endif %}
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">Save</button>
+    </form>
+</div>
+{% endblock content %}

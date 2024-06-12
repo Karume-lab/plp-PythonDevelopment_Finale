@@ -1,0 +1,58 @@
+{% extends './../base.html' %}
+
+
+
+{% block title %}
+{{blog.title}}
+{% endblock title %}
+
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">{{ blog.title }}</h1>
+
+<div class="flex">
+    <div class="text-center">
+        <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="max-w-md">
+    </div>
+    <div>
+        <div>
+            <p class="text-gray-600">Author: {{ blog.author }}</p>
+            <p class="text-gray-600">Created At: {{ blog.created_at }}</p>
+            <p class="text-gray-600">Updated At: {{ blog.updated_at }}</p>
+        </div>
+        <div>
+            {% if request.user == blog.author %}
+            <div class="mb-4">
+                <a href="{% url 'blogs:blog-update' blog.slug %}" class="mr-2 text-blue-500">Edit</a>
+                <a href="{% url 'blogs:blog-delete' blog.slug %}" class="text-red-500">Delete</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div>
+    {{ blog.content | safe }}
+</div>
+
+
+<h2 class="text-xl font-bold mb-4">Comments</h2>
+<ul class="mb-4">
+    {% for comment in blog.comment_set.all %}
+    <li class="text-gray-800 mb-2">
+        {{ comment.content }} - <span class="text-gray-500">{{ comment.author.username }}</span> |
+        {{ comment.created_at }}
+    </li>
+    {% endfor %}
+</ul>
+
+
+<form action="{% url 'blogs:comment-create' blog.slug %}" method="post" class="mb-4">
+    {% csrf_token %}
+    <textarea name="content"
+        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Add your comment"></textarea>
+    <button type="submit" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add
+        Comment</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Blogs
+{% endblock title %}
+
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {% for blog in blogs %}
+    <a href="{% url 'blogs:blog-detail' blog.slug %}" class="block">
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-50 h-auto" src="{{ blog.image.url }}" alt="{{ blog.title }}" />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{{ blog.title }}</div>
+          <p class="text-gray-700 text-base">
+            {{ blog.content|slice:":200"|safe|linebreaksbr }}
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <ul>
+            {% for tag in blog.tags.all %}
+            <li class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+              #{{ tag.name }}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </a>
+    {% empty %}
+    <div class="flex items-center justify-center w-full h-full bg-gray-100">
+      <div class="text-center">
+        <p class="text-gray-600">Nothing here yet</p>
+        <img class="w-64 h-auto mt-4 mx-auto" src="{% static 'img/nothing.png' %}" alt="nothing">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
